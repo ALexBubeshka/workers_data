@@ -8,7 +8,7 @@ exempl_1 = None
 def start_interface ():
     msg = "Добро пожаловать в базу данных работников\nВыберете один из пунктов"
     title = 'База данных работников'
-    choices = ['Вывести полную базу данных','Добавление работника в базу данных','Удаление работника из базы данных','Отбор по критериям','Поиск']
+    choices = ['Вывести полную базу данных','Добавление работника в базу данных','Удаление работника из базы данных','Отбор по критериям']
     choice = choicebox(msg, title, choices)
     return str(choice)
 
@@ -16,7 +16,7 @@ def choice_interface(choice):
     global fieldNames
     global exempl_1
     if choice == 'Вывести полную базу данных':
-        message = data
+        message = json.dumps(data,indent=4,sort_keys=True)
         title = 'Полная база данных'
         output = ynbox(message,title,("Да","Нет"))
         if output:
@@ -40,8 +40,13 @@ def choice_interface(choice):
             fieldValues = multenterbox(errmsg, title, fieldNames, fieldValues)
             if fieldValues is None:
                 break
-        print("Новый работник{}".format(fieldValues))
-        msgbox('Работник добавлен')
+        message = "Новый работник{}".format(fieldValues) + "\nХотите еще раз найти?"
+        title = 'Добавление работника в базу данных'
+        output = ynbox(message,title,("Да","Нет"))
+        if output:
+            choice_interface('Добавление работника в базу данных')
+        else:
+            choice_interface(start_interface())
         choice_interface(start_interface())
     elif choice == 'Удаление работника из базы данных':
         message = 'Введите ФИО работника'
@@ -61,26 +66,19 @@ def choice_interface(choice):
         else:
             choice_interface(start_interface())
     elif choice == 'Отбор по критериям':
-        message = 'Выберете один или несколько критерий отбора'
-        title = 'Отбор по критериям'
+        message = 'Заполните поля'
+        title = 'Новый работник'
         fieldNames = ['ФИО','Пол','Дата рождения','Семейное положение','Телефон','Должность','Зарплата']
-        fieldValues = multchoicebox(message,title,fieldNames)
+        fieldValues = multenterbox(message,title,fieldNames)
         if fieldValues is None:
             choice_interface(start_interface())
-    elif choice == 'Поиск':
-        message = 'Введите что нужно найти'
-        title = 'Поиск'
-        d_text = ''
-        output = enterbox(message,title,d_text)
-        if output:
-            message = str(output) +"\nХотите еще что-либо найти?"
-            title = 'Поиск'
+        else:
+            message = "Тут нужно вывести подобранные данные\nХотите еще раз найти?"
+            title = 'Отбор по критериям'
             output = ynbox(message,title,("Да","Нет"))
             if output:
-                choice_interface('Поиск')
+                choice_interface('Отбор по критериям')
             else:
                 choice_interface(start_interface())
-        else:
-            choice_interface(start_interface())
 
 choice_interface(start_interface())
