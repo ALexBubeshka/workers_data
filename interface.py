@@ -47,7 +47,7 @@ def choice_interface(choice):
             fieldValues = multenterbox(errmsg, title, fieldNames, fieldValues)
             if fieldValues is None:
                 break
-        message = "Новый работник{}".format(fieldValues) + "\nХотите еще раз найти?"
+        message = "Новый работник{}".format(fieldValues) + "\nХотите еще добавить работников?"
         title = 'Добавление работника в базу данных'
         output = ynbox(message,title,("Да","Нет"))
         if output:

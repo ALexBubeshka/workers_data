@@ -7,4 +7,3 @@ def building_first_json():
         json.dump(employees, db, indent=4)
 
 building_first_json()
-
