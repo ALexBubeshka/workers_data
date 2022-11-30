@@ -1,0 +1,47 @@
+15:59:24 - interface - INFO - start_interface: 14 - Запущен главный экран приложения
+15:59:27 - interface - INFO - choice_interface: 28 - Выбран пунк - Вывести полную базу данных
+15:59:28 - interface - INFO - start_interface: 14 - Запущен главный экран приложения
+15:59:30 - interface - INFO - choice_interface: 86 - Выбран пунк - Отбор по критериям
+15:59:34 - interface - INFO - choice_interface: 97 - Выведен список - {}
+15:59:37 - interface - INFO - choice_interface: 86 - Выбран пунк - Отбор по критериям
+15:59:40 - interface - INFO - choice_interface: 97 - Выведен список - {
+    "1524786": {
+        "Full name": "Ivanov Ivan Ivanovich",
+        "Sex": "M",
+        "Birth date": "01.12.1960",
+        "Marital status": "widower",
+        "Job title": "director",
+        "salary": 2000,
+        "Phone numbers": [
+            375295671247,
+            375338726590
+        ]
+    },
+    "1524787": {
+        "Full name": "Petrov Petr Pettrovich",
+        "Sex": "M",
+        "Birth date": "12.04.1983",
+        "Marital status": "single",
+        "Job title": "supervisor",
+        "salary": 1500,
+        "Phone numbers": [
+            374495671757,
+            375298124500
+        ]
+    },
+    "1524791": {
+        "Full name": "Noskov Igor Vladimirovich",
+        "Sex": "M",
+        "Birth date": "17.02.1987",
+        "Marital status": "married",
+        "Job title": "manager",
+        "salary": 1200,
+        "Phone numbers": [
+            375443334546,
+            375448751462
+        ]
+    }
+}
+15:59:42 - interface - INFO - start_interface: 14 - Запущен главный экран приложения
+15:59:44 - interface - INFO - choice_interface: 86 - Выбран пунк - Отбор по критериям
+15:59:45 - interface - ERROR - choice_interface: 106 - Программа не запустилась

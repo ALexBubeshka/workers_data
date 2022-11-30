@@ -1,4 +1,5 @@
-from interface import start_interface
+from interface import *
+from log import *
 
 def main_employees():
     start_interface()
